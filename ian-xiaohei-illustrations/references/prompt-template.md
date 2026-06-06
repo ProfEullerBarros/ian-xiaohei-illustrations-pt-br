@@ -2,6 +2,24 @@
 
 Generate each image separately. Replace variables based on the article; do not combine multiple images into one.
 
+## Pre-Generation Spec
+
+For generation requests, prepare this compact spec before calling `image_gen`:
+
+```text
+#: {sequence number}
+Placement: {where this belongs in the article}
+Core idea: {one cognitive anchor}
+Structure type: {one allowed structure type}
+Xiaohei action: {what Xiaohei physically does}
+Labels: {3-5 short English labels}
+Save name: {NN-topic-slug.png}
+```
+
+The spec is a contract for generation. It is not a confirmation gate unless the user asked to approve the plan first.
+
+## Image Prompt
+
 ```text
 Generate one standalone 16:9 horizontal English article illustration.
 
@@ -49,3 +67,18 @@ Edit the provided image. Remove only the handwritten title "{text to remove}" an
 ```text
 Regenerate this illustration with the same core meaning and simple layout, but make Xiaohei more central to the conceptual action. Xiaohei should be doing the strange work that explains the idea, not standing beside the diagram. Keep it clean, sparse, hand-drawn, and not cute.
 ```
+
+## Save Handoff
+
+After saving files locally, report:
+
+```text
+Generated {count} images.
+Saved:
+- {absolute/path/01-topic-name.png} - {purpose}
+- {absolute/path/02-topic-name.png} - {purpose}
+Most reliable: {image numbers}
+Optional: {image numbers or "none"}
+```
+
+If generated images are not available as local files, say they were generated but not saved and name the destination folder that should receive them.

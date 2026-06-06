@@ -24,6 +24,17 @@ Read only what you need:
 - `references/qa-checklist.md`: generation checks and iteration rules.
 - `assets/examples/`: low-frequency style calibration only. Do not copy these examples' compositions, objects, or labels.
 
+## Operating Modes
+
+Choose exactly one mode from the user's request before acting:
+
+- `plan_only`: the user asks to plan, analyze, design a shot list, or says not to generate yet.
+- `generate`: the user asks to generate, produce, make, create, or design and generate images.
+- `edit`: the user provides an image and asks to remove a title, fix wrong text, increase Xiaohei involvement, or revise the existing image.
+- `save`: the user asks to organize, rename, export, or copy already-generated images into the workspace.
+
+If a request combines modes, run them in this order: `plan_only` shot list -> `generate` images -> `edit` fixes -> `save` deliverables. Do not ask for confirmation between modes unless the user requested approval checkpoints.
+
 ## Workflow
 
 ### 1. Digest the Article
@@ -39,7 +50,7 @@ Do not average the coverage. Prefer cognitive anchor points such as the core jud
 
 ### 2. Output a Shot List First
 
-If the user only wants planning or wants to think through where images should go, start with a shot list. For each image, state:
+In `plan_only` mode, output only the shot list and do not call `image_gen`. For each image, state:
 
 - where it goes in the article
 - the image topic
@@ -53,7 +64,18 @@ Default to 4-8 images. For short articles, 1-3 images may be enough. For long ar
 
 ### 3. Generate One Image at a Time
 
-If the user explicitly asks to generate, produce, make, or create, do not wait for confirmation. Use the built-in `image_gen` once per image. Do not combine multiple images into one.
+In `generate` mode, do not wait for confirmation. Derive a compact image spec for every planned image, then use the built-in `image_gen` once per image. Do not combine multiple images into one grid or collage.
+
+Before the first `image_gen` call, if the host allows a short text response, show a compact spec table with these columns:
+
+- `#`
+- `placement`
+- `core idea`
+- `structure type`
+- `Xiaohei action`
+- `labels`
+
+Keep the table short. It is a generation contract, not a discussion gate.
 
 Each image should explain only one core structure. The prompt must include:
 
@@ -67,7 +89,23 @@ Each image should explain only one core structure. The prompt must include:
 
 Do not copy old cases. The examples only show line density, whitespace, color restraint, and Xiaohei participation. Do not reuse known compositions such as conveyor-belt breakpoints, Xiaohei pulling a decision lever, Xiaohei as a funnel, Xiaohei cutting a fish, Xiaohei pulling a handoff path, Xiaohei pulling three information layers, the three-Xiaohei bridge/door/megaphone scene, the phrase toolbox, or the common-pitfall sign. Re-invent a strange but coherent metaphor from the current article each time.
 
-### 4. Check and Iterate
+### 4. Edit Existing Images
+
+In `edit` mode, preserve the existing composition unless the user explicitly asks for a redesign. Use `references/prompt-template.md` for title-removal and Xiaohei-involvement prompts.
+
+For title or wrong-text removal:
+
+- remove only the target text and its underline or local mark
+- preserve characters, labels, paths, line style, aspect ratio, and quality
+- do not add new text or objects
+
+For Xiaohei-involvement revisions:
+
+- keep the same core meaning
+- make Xiaohei the action subject
+- simplify labels before regenerating if text quality was the problem
+
+### 5. Check and Iterate
 
 After generation, check `references/qa-checklist.md`. If any of the following happen, regenerate or edit locally:
 
@@ -79,22 +117,32 @@ After generation, check `references/qa-checklist.md`. If any of the following ha
 - the style feels too cute, childish, or stiff
 - the background is not clean white
 
-### 5. Save the Deliverable
+### 6. Save the Deliverable
 
-If the user is working in the workspace, copy the final image to:
+In `save` mode, or after successful generation when the user is working in a workspace, copy final PNGs to:
 
 ```text
 assets/<article-slug>-illustrations/
 ```
 
-Use sequential names such as:
+Create `<article-slug>` from the article title or user-provided topic:
+
+- lowercase ASCII
+- replace spaces and punctuation with hyphens
+- collapse repeated hyphens
+- trim leading and trailing hyphens
+- if no useful title exists, use `xiaohei-illustrations`
+
+Use sequential names:
 
 ```text
 01-topic-name.png
 02-topic-name.png
 ```
 
-Keep the original generated file and do not overwrite existing assets unless the user explicitly asks for replacement.
+For each topic name, use the same slug rules and keep it under 50 characters. If a target filename already exists, do not overwrite it unless the user explicitly asked for replacement. Instead append `-v2`, `-v3`, and so on.
+
+Keep the original generated file. In the handoff, report absolute filesystem paths for saved files. If the host returns image attachments but no local file path is available, say that the images were generated but not saved, and explain what local file path is needed to complete `save` mode.
 
 ## Output Format
 

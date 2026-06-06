@@ -132,6 +132,26 @@ After installing, use it in Codex like this:
 Use $ian-xiaohei-illustrations to design and generate 5 weird Xiaohei illustrations for this English article.
 ```
 
+### Validate the Skill
+
+Run the repository validator before publishing or copying a changed skill:
+
+```bash
+npm test
+```
+
+The validator checks the installable skill bundle, required reference files, local Markdown links, English-default text, synced example assets, PNG dimensions, and the generation/save contract.
+
+### Versioning
+
+Release versions are tracked in three places and must stay aligned:
+
+- `package.json` for repository tooling.
+- `ian-xiaohei-illustrations/VERSION` for the copied skill bundle.
+- `CHANGELOG.md` for user-visible behavior changes.
+
+Run `npm test` after changing any versioned behavior.
+
 ---
 
 ## How to Use It
@@ -190,12 +210,13 @@ The workflow is:
 1. Read the article, Markdown file, Notion content, screenshot, or user theme
 2. Identify the core ideas, cognitive pivots, workflows, and visualizable sections
 3. Output a shot list first: each image should map to one cognitive anchor
-4. Pick one structure type per image: Workflow, system fragment, before-after contrast, character state, conceptual metaphor, layered method, route map, or small comic sequence
-5. Re-invent a low-tech, weird-but-coherent physical metaphor
-6. Make Xiaohei perform the core action
-7. Generate each image separately
-8. Check the QA checklist: white background, lots of space, Xiaohei action, English labels, no PPT feel, no old-case reuse
-9. Save the final PNG and report the purpose and path
+4. For generation requests, produce a compact image spec table before calling `image_gen`
+5. Pick one structure type per image: Workflow, system fragment, before-after contrast, character state, conceptual metaphor, layered method, route map, or small comic sequence
+6. Re-invent a low-tech, weird-but-coherent physical metaphor
+7. Make Xiaohei perform the core action
+8. Generate each image separately
+9. Check the QA checklist: white background, lots of space, Xiaohei action, English labels, no PPT feel, no old-case reuse
+10. Save the final PNG with a slugged sequential filename and report the absolute path, purpose, and reliability
 
 ---
 
@@ -204,6 +225,10 @@ The workflow is:
 ```text
 .
 ├── README.md
+├── CHANGELOG.md
+├── package.json
+├── scripts/
+│   └── validate-skill.mjs
 ├── LICENSE
 ├── NOTICE.md
 ├── assets/
@@ -216,6 +241,7 @@ The workflow is:
 │   └── prompts.md
 └── ian-xiaohei-illustrations/
     ├── SKILL.md
+    ├── VERSION
     ├── agents/
     │   └── openai.yaml
     ├── assets/

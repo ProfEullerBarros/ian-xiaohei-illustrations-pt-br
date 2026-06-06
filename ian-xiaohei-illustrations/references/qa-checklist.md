@@ -14,6 +14,9 @@
 - Orange is used only for the main path or arrow.
 - Red is used only for key notes, problems, reminders, or results.
 - Blue is used only for side notes, feedback, or system state.
+- Generation requests have one compact spec per image before `image_gen` is called, when the host allows a short text response.
+- Saved deliverables use slugged sequential PNG names and do not overwrite existing files unless replacement was requested.
+- The final handoff includes absolute filesystem paths for every saved file.
 
 ## Failure Signals
 
@@ -29,6 +32,9 @@ If any of the following appear, regenerate or edit locally:
 - English spelling mistakes are severe or labels are unreadable.
 - The image feels stiff and has no absurd metaphor.
 - It looks too similar to the old examples in `assets/examples/`.
+- The agent combines multiple requested images into one grid or collage.
+- The generated file is handed off without a saved path when the user expected workspace files.
+- A destination asset is overwritten without explicit replacement permission.
 
 ## Iteration Methods
 
@@ -38,9 +44,12 @@ If any of the following appear, regenerate or edit locally:
 - Too PPT-like: remove titles, borders, clean grids, and too many arrows. Make it feel like a hand-drawn scene.
 - Too similar to an old example: keep the core meaning, but change the main object and Xiaohei's action.
 - Text is wrong: edit locally first; if there are too many errors, regenerate and reduce the number of labels.
+- Save path conflict: keep the original file and append `-v2`, `-v3`, and so on.
 
 ## Delivery Check
 
 A high-quality image should make the reader first think, "This is a little weird," and then understand the structure within one second.
 
 If it first looks like a tutorial page rather than a weird product sketch on white paper, it is not good enough.
+
+The handoff is not complete until the user can inspect the saved PNG paths or understands that the host did not expose local generated files.
