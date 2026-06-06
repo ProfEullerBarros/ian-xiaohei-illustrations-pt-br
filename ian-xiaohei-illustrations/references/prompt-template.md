@@ -74,6 +74,9 @@ After saving files locally, report:
 
 ```text
 Generated {count} images.
+QA:
+| image | aspect ratio | white background | Xiaohei core action | labels | no title | no old-case reuse | saved path |
+| {file name} | pass | pass | pass | pass, {count} short labels | pass | pass | {absolute path or not saved} |
 Saved:
 - {absolute/path/01-topic-name.png} - {purpose}
 - {absolute/path/02-topic-name.png} - {purpose}

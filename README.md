@@ -216,7 +216,8 @@ The workflow is:
 7. Make Xiaohei perform the core action
 8. Generate each image separately
 9. Check the QA checklist: white background, lots of space, Xiaohei action, English labels, no PPT feel, no old-case reuse
-10. Save the final PNG under the current workspace root with a slugged sequential filename and report the absolute path, purpose, and reliability
+10. Include a compact per-image QA manifest in the final handoff
+11. Save the final PNG under the current workspace root with a slugged sequential filename and report the absolute path, purpose, and reliability
 
 ---
 

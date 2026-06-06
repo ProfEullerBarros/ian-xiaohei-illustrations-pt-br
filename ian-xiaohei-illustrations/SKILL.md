@@ -125,6 +125,8 @@ After generation, check `references/qa-checklist.md`. If any of the following ha
 - the style feels too cute, childish, or stiff
 - the background is not clean white
 
+Before the final handoff, produce a compact QA manifest for each generated or edited image. Include pass/fail notes for aspect ratio, white background, Xiaohei core action, label count/readability, no title, no old-case reuse, and saved path.
+
 ### 6. Save the Deliverable
 
 In `save` mode, or after successful generation when the user is working in a workspace, copy final PNGs under the current workspace root, not inside the installed skill bundle, unless the user explicitly gives a different destination. Use:
@@ -160,6 +162,7 @@ Keep the pre-generation response short and precise. The post-generation handoff 
 
 - how many images were generated
 - what each image is for
+- the QA manifest for each image
 - where each file is saved
 - which images are the most reliable and which are optional
 
