@@ -1,5 +1,7 @@
 # Ian Xiaohei Illustrations
 
+This repository is an English translation and adaptation of the original project by Ian. The original repository can be found at: [https://github.com/helloianneo/ian-xiaohei-illustrations](https://github.com/helloianneo/ian-xiaohei-illustrations).
+
 > Turn the key judgments, workflows, states, and metaphors in an English article into a set of white-background, hand-drawn, weird-but-clean body illustrations.
 >
 > 16:9 horizontal | Xiaohei IP | pure white hand-drawn look | sparse red/orange/blue English annotations | Codex Skill
