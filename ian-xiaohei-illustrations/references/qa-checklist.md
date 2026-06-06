@@ -10,7 +10,7 @@
 - 画面怪诞、有创意、有意思。
 - 简洁清爽，主体不超过画面约 60%。
 - 一张图只讲一个核心结构。
-- 中文标注少、短、能读。
+- English labels are sparse, short, and readable.
 - 橙色只用于主路径或箭头。
 - 红色只用于重点、问题、提醒或结果。
 - 蓝色只用于补充说明、反馈或系统状态。
@@ -26,7 +26,7 @@
 - 文字变成大段解释。
 - 背景有纸纹、阴影、渐变、米色、噪点。
 - 真实 UI 截图或科技感界面。
-- 中文错字严重或标注不可读。
+- English spelling mistakes are severe or labels are unreadable.
 - 画面太死板，没有荒诞隐喻。
 - 和 `assets/examples/` 里的旧案例构图过于相似。
 

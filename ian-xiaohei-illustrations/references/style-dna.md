@@ -2,47 +2,47 @@
 
 ## 一句话
 
-纯白、极简、手绘、留白、克制、怪诞、产品草图感、中文手写感、结构清楚但不说明书。
+Pure white, minimal, hand-drawn, spacious, restrained, weird, product-sketch feeling, English handwritten feel, structurally clear but not instructional.
 
-像一个长期做 AI、产品、设计、开发工具的人，在白纸上随手画出来的一张解释草图。
+Like an explainer sketch casually drawn on white paper by someone who has spent years making AI, product, design, and developer tools.
 
 ## 必须
 
-- 16:9 横版正文配图。
-- 纯白背景：不要米色、暖灰、纸张纹理、渐变、阴影、噪点、复古纸感。
-- 黑色手绘线稿为主：细线、轻微抖动、不机械、不矢量、不厚重描边。
-- 大量留白：主体占画面约 40%-60%，至少 35% 空白，最好有一整块安静区域。
-- 少量中文手写批注：最多 5-8 处，每处尽量 2-8 个字。
-- 一张图只讲一个核心动作、结构、状态或隐喻。
-- 结构要自然表达，不要在图上写结构类型名称。
+- 16:9 horizontal body illustration.
+- Pure white background: no beige, warm gray, paper texture, gradients, shadows, noise, or retro paper feel.
+- Black hand-drawn line art as the base: thin lines, slight wobble, not mechanical, not vector, not heavy outlines.
+- Lots of empty space: the subject should take about 40%-60% of the frame, with at least 35% blank area and ideally one large quiet zone.
+- Sparse English handwritten annotations: at most 5-8 total, each ideally 1-5 short words.
+- One image should explain only one core action, structure, state, or metaphor.
+- Let the structure emerge naturally; do not write the structure type on the image.
 
 ## 颜色
 
-- 黑色：主体线稿、角色、框线、结构、主要文字、主体物件。
-- 红色：重点批注、问题、情绪点、关键提醒、结果。
-- 橙色：主流程、路径、箭头、自动化流向、从 A 到 B 的移动关系。
-- 蓝色：补充说明、脑内状态、系统状态、第二层解释、AI/assistant/自动化提示。
+- Black: primary line art, characters, frames, structures, main text, and main objects.
+- Red: key annotations, problems, emotional points, critical reminders, and results.
+- Orange: main flow, paths, arrows, automation flow, and movement from A to B.
+- Blue: side notes, mental state, system state, second-layer explanation, and AI/assistant/automation cues.
 
 蓝色不是每张都必须用。颜色要克制，宁可少不要多。
 
 ## 绝对不要
 
-- 不要商业插画。
-- 不要 PPT 信息图。
-- 不要正式流程图。
-- 不要课程课件。
-- 不要可爱卡通海报。
-- 不要儿童插画。
-- 不要复杂架构图。
-- 不要精致扁平插画。
-- 不要科技感 UI。
-- 不要真实 App 截图。
-- 不要复杂背景、渐变、阴影、纹理。
-- 不要把每个节点都解释清楚。
-- 不要左上角写“Workflow 流程图 / 系统架构图 / 常见坑 / 路线图”等类型标题。
+- No commercial illustration.
+- No PPT infographic.
+- No formal flowchart.
+- No course slide.
+- No cute cartoon poster.
+- No children's illustration.
+- No complex architecture diagram.
+- No polished flat illustration.
+- No tech UI look.
+- No real app screenshot.
+- No complex background, gradients, shadows, or texture.
+- Do not explain every node.
+- Do not write top-left titles like "Workflow", "System Architecture", "Common Pitfalls", or "Route Map".
 
 ## 审美方向
 
-要怪诞、创意、有意思、简洁清爽、天马行空。
+It should feel weird, creative, interesting, clean, and a little unhinged.
 
-不要可爱、幼稚、很复杂、死板。
+Do not make it cute, childish, overly complex, or stiff.

@@ -1,13 +1,15 @@
 ---
 name: ian-xiaohei-illustrations
-description: 生成 Ian 风格的中文正文配图。用于用户要求为中文文章、帖子、博客、Notion 文档、工作流文档、方法论、流程、结构、状态、隐喻或观点生成“怪诞”“小黑”“手绘”“正文配图”“文章插图”“配图建议”“shot list”“去标题/改图”等任务；默认使用小黑 IP、纯白手绘、少量红橙蓝批注、简洁清爽但天马行空的视觉风格。
+description: Generate Ian-style English article illustrations. Use for user requests that need weird, clean, hand-drawn body images, article illustrations, shot lists, or edit/remove-title tasks for English articles, posts, blogs, Notion docs, workflows, methods, structures, states, metaphors, or viewpoints. Default to the Xiaohei IP, pure white hand-drawn look, sparse red/orange/blue annotations, and a clean but imaginative visual style.
 ---
 
-# Ian 小黑怪诞正文配图
+# Ian Xiaohei Weird Article Illustrations
 
 ## 核心定位
 
-为中文文章设计和生成 16:9 横版正文配图。目标不是做商业插画、PPT 信息图或可爱卡通，而是把文章里的关键判断、流程、结构、状态或隐喻，变成一张清爽、怪诞、有创意、可读但不说明书的手绘解释图。
+Design and generate 16:9 horizontal article illustrations for English-language content. The goal is not commercial illustration, PPT infographic design, or cute cartoon art. Turn the article's key judgments, workflows, structures, states, or metaphors into a clean, weird, creative hand-drawn explainer that reads clearly without looking like a manual.
+
+Unless the user explicitly asks for another language, all handwritten annotations and labels on the image should be in English.
 
 默认视觉 IP 是“小黑”：黑色实心、白点眼、细腿、空表情，认真做一件荒诞但成立的事。小黑必须参与画面的核心动作，不能只是站在旁边当装饰。
 
@@ -45,7 +47,7 @@ description: 生成 Ian 风格的中文正文配图。用于用户要求为中�
 - 结构类型
 - 小黑在图里做什么
 - 建议元素
-- 建议中文标注词
+- Suggested English label words
 
 默认 4-8 张。文章很短时 1-3 张；长文也不要轻易超过 9 张。够用就好，避免把正文做成画册。
 
@@ -55,10 +57,10 @@ description: 生成 Ian 风格的中文正文配图。用于用户要求为中�
 
 每张图只讲一个核心结构。提示词必须包含：
 
-- 16:9 横版中文正文配图
+- 16:9 horizontal English article illustration
 - 纯白背景
 - 黑色手绘线稿
-- 少量红色/橙色/蓝色中文手写批注
+- Sparse red/orange/blue handwritten English annotations
 - 大量留白
 - 小黑作为核心动作主体
 - 禁止 PPT、商业插画、幼稚可爱、复杂架构、左上角类型标题
@@ -72,7 +74,7 @@ description: 生成 Ian 风格的中文正文配图。用于用户要求为中�
 - 小黑只是装饰
 - 画面太满
 - 太像流程图/PPT
-- 中文太多或错字严重
+- Too much text or severe English spelling mistakes
 - 左上角出现“常见坑/流程图/系统架构图”等标题
 - 画风太可爱、幼稚、死板
 - 背景不是干净白底

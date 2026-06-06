@@ -2,7 +2,7 @@
 
 ## 角色定义
 
-小黑是 Ian 中文正文配图的固定视觉 IP。
+Xiaohei is the fixed visual IP for Ian-style English article illustrations.
 
 默认每张图都要出现小黑。小黑不是吉祥物，不是贴纸，不是可爱装饰，而是正在认真参与系统运转的荒诞工作者。
 
