@@ -74,35 +74,35 @@ This skill defaults to Ian's Xiaohei weird body-illustration style:
 
 ### Two Breakpoints
 
-![Two Breakpoints](examples/images/01-two-breakpoints.png)
+![Whiteboard-style illustration of two breakpoints](examples/images/01-two-breakpoints.png)
 
 ### Sort by Purpose
 
-![Sort by Purpose](examples/images/02-sort-by-purpose.png)
+![Whiteboard-style illustration of sorting by purpose](examples/images/02-sort-by-purpose.png)
 
 ### One Fish, Many Uses
 
-![One Fish, Many Uses](examples/images/03-one-fish-many-uses.png)
+![Whiteboard-style illustration of one fish with many uses](examples/images/03-one-fish-many-uses.png)
 
 ### Handoff Path
 
-![Handoff Path](examples/images/04-handoff-path.png)
+![Whiteboard-style illustration of a handoff path](examples/images/04-handoff-path.png)
 
 ### Information Well
 
-![Information Well](examples/images/05-information-well.png)
+![Whiteboard-style illustration of an information well](examples/images/05-information-well.png)
 
 ### Idea Press
 
-![Idea Press](examples/images/06-idea-press.png)
+![Whiteboard-style illustration of an idea press](examples/images/06-idea-press.png)
 
 ### Content Fermentation
 
-![Content Fermentation](examples/images/07-content-fermentation.png)
+![Whiteboard-style illustration of content fermentation](examples/images/07-content-fermentation.png)
 
 ### Trust Bridge
 
-![Trust Bridge](examples/images/08-trust-bridge.png)
+![Whiteboard-style illustration of a trust bridge](examples/images/08-trust-bridge.png)
 
 These images are style calibration samples, not composition templates. When you use the skill, invent a fresh metaphor from the current article instead of copying an old object arrangement.
 
