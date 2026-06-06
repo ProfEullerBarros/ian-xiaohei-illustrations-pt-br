@@ -119,11 +119,13 @@ After generation, check `references/qa-checklist.md`. If any of the following ha
 
 ### 6. Save the Deliverable
 
-In `save` mode, or after successful generation when the user is working in a workspace, copy final PNGs to:
+In `save` mode, or after successful generation when the user is working in a workspace, copy final PNGs under the current workspace root, not inside the installed skill bundle, unless the user explicitly gives a different destination. Use:
 
 ```text
-assets/<article-slug>-illustrations/
+<workspace-root>/assets/<article-slug>-illustrations/
 ```
+
+If there is no detectable workspace root, ask for a destination before saving. If the user provides a destination folder, save there and preserve the same `<article-slug>-illustrations/` child folder pattern unless they asked for exact filenames.
 
 Create `<article-slug>` from the article title or user-provided topic:
 

@@ -47,7 +47,7 @@ Default output:
 - 16:9 horizontal body illustrations
 - Shot lists for an article, usually 4-8 images
 - For each image: topic, core idea, structure type, Xiaohei action, and English label suggestions
-- Final PNGs saved under `assets/<article-slug>-illustrations/`
+- Final PNGs saved under `<workspace-root>/assets/<article-slug>-illustrations/`
 
 Default non-output:
 
@@ -216,7 +216,7 @@ The workflow is:
 7. Make Xiaohei perform the core action
 8. Generate each image separately
 9. Check the QA checklist: white background, lots of space, Xiaohei action, English labels, no PPT feel, no old-case reuse
-10. Save the final PNG with a slugged sequential filename and report the absolute path, purpose, and reliability
+10. Save the final PNG under the current workspace root with a slugged sequential filename and report the absolute path, purpose, and reliability
 
 ---
 
