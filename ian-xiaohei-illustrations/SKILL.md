@@ -72,7 +72,7 @@ Default to 4-8 images. For short articles, 1-3 images may be enough. For long ar
 
 ### 3. Generate One Image at a Time
 
-In `generate` mode, do not wait for confirmation. Derive a compact image spec for every planned image, then use the built-in `image_gen` once per image. Do not combine multiple images into one grid or collage.
+In `generate` mode, do not wait for confirmation. If the user does not give an image count, generate 3 images by default. Derive a compact image spec for every planned image, then use the built-in `image_gen` once per image. Do not combine multiple images into one grid or collage.
 
 Before the first `image_gen` call, if the host allows a short text response, show a compact spec table with these columns:
 

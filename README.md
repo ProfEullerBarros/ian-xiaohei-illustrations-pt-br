@@ -214,7 +214,7 @@ The workflow is:
 5. Pick one structure type per image: Workflow, system fragment, before-after contrast, character state, conceptual metaphor, layered method, route map, or small comic sequence
 6. Re-invent a low-tech, weird-but-coherent physical metaphor
 7. Make Xiaohei perform the core action
-8. Generate each image separately
+8. Generate each image separately; direct generation defaults to 3 images when no count is provided
 9. Check the QA checklist: white background, lots of space, Xiaohei action, English labels, no PPT feel, no old-case reuse
 10. Include a compact per-image QA manifest in the final handoff
 11. Save the final PNG under the current workspace root with a slugged sequential filename and report the absolute path, purpose, and reliability
