@@ -5,104 +5,104 @@ description: Generate Ian-style English article illustrations. Use for user requ
 
 # Ian Xiaohei Weird Article Illustrations
 
-## 核心定位
+## Core Position
 
 Design and generate 16:9 horizontal article illustrations for English-language content. The goal is not commercial illustration, PPT infographic design, or cute cartoon art. Turn the article's key judgments, workflows, structures, states, or metaphors into a clean, weird, creative hand-drawn explainer that reads clearly without looking like a manual.
 
 Unless the user explicitly asks for another language, all handwritten annotations and labels on the image should be in English.
 
-默认视觉 IP 是“小黑”：黑色实心、白点眼、细腿、空表情，认真做一件荒诞但成立的事。小黑必须参与画面的核心动作，不能只是站在旁边当装饰。
+Default visual IP: Xiaohei, a black solid creature with white dot eyes, thin legs, a blank expression, and a serious but absurd attitude. Xiaohei must participate in the core action of the image, not stand at the side as decoration.
 
-## 先读这些参考
+## Reference Files
 
-按任务需要读取，不要一次塞满上下文：
+Read only what you need:
 
-- `references/style-dna.md`：风格 DNA、颜色、文字、禁忌。
-- `references/xiaohei-ip.md`：小黑 IP 的形象、性格、动作库和禁忌。
-- `references/composition-patterns.md`：结构类型、原创隐喻方法和反复刻规则。
-- `references/prompt-template.md`：单张生图提示词模板。
-- `references/qa-checklist.md`：生成后检查和迭代规则。
-- `assets/examples/`：只作低频视觉校准，不进入默认生成路径。不要照抄这些案例的构图、物件或标注。
+- `references/style-dna.md`: style DNA, colors, text, and bans.
+- `references/xiaohei-ip.md`: Xiaohei's appearance, personality, action pool, and bans.
+- `references/composition-patterns.md`: structure types, original metaphor rules, and repetition rules.
+- `references/prompt-template.md`: single-image prompt template.
+- `references/qa-checklist.md`: generation checks and iteration rules.
+- `assets/examples/`: low-frequency style calibration only. Do not copy these examples' compositions, objects, or labels.
 
-## 工作流
+## Workflow
 
-### 1. 消化正文
+### 1. Digest the Article
 
-先读用户给的正文、链接、Notion 页面、Markdown 文件或截图内容。提炼：
+Read the user-provided article, link, Notion page, Markdown file, or screenshot. Extract:
 
-- 核心观点是什么
-- 哪些段落承担认知转折
-- 哪些内容适合用图解释
-- 哪些地方只适合文字，不需要图
+- the core idea
+- the paragraphs that create a cognitive turn
+- the parts that are worth visualizing
+- the parts that should remain text only
 
-不要平均配图。优先选择“认知锚点”，例如：核心判断、两个断点、输入输出闭环、分流、前后对比、一鱼多吃、承接路径、常见坑、角色状态变化。
+Do not average the coverage. Prefer cognitive anchor points such as the core judgment, two breakpoints, an input/output loop, a split path, a before/after contrast, a one-item-many-uses pattern, a handoff path, common pitfalls, or a character-state change.
 
-### 2. 先出配图策略
+### 2. Output a Shot List First
 
-如果用户只是说“分析怎么配图 / 思考哪些地方需要配图”，先给 shot list。每张图写清楚：
+If the user only wants planning or wants to think through where images should go, start with a shot list. For each image, state:
 
-- 放在哪个段落后
-- 图的主题
-- 核心意思
-- 结构类型
-- 小黑在图里做什么
-- 建议元素
-- Suggested English label words
+- where it goes in the article
+- the image topic
+- the core meaning
+- the structure type
+- what Xiaohei is doing
+- suggested elements
+- suggested English labels
 
-默认 4-8 张。文章很短时 1-3 张；长文也不要轻易超过 9 张。够用就好，避免把正文做成画册。
+Default to 4-8 images. For short articles, 1-3 images may be enough. For long articles, do not casually exceed 9. Keep it lean; do not turn the article into an illustrated book.
 
-### 3. 单张生成
+### 3. Generate One Image at a Time
 
-如果用户明确要求“生成 / 输出 / 做图 / 帮我生成”，不要停下来等确认；用内置 `image_gen` 每张单独生成。不要把多张图拼在一张里。
+If the user explicitly asks to generate, produce, make, or create, do not wait for confirmation. Use the built-in `image_gen` once per image. Do not combine multiple images into one.
 
-每张图只讲一个核心结构。提示词必须包含：
+Each image should explain only one core structure. The prompt must include:
 
 - 16:9 horizontal English article illustration
-- 纯白背景
-- 黑色手绘线稿
-- Sparse red/orange/blue handwritten English annotations
-- 大量留白
-- 小黑作为核心动作主体
-- 禁止 PPT、商业插画、幼稚可爱、复杂架构、左上角类型标题
+- pure white background
+- black hand-drawn line art
+- sparse red/orange/blue handwritten English annotations
+- lots of empty white space
+- Xiaohei as the core action subject
+- no PPT look, no commercial illustration, no childish cuteness, no complex architecture, and no top-left type title
 
-不要复刻过往案例。案例只提供风格密度和小黑参与方式，不能直接复用“传送带断点 / 小黑拉线 / 素材鱼 / 盖章工具箱 / 常见坑路径”等已有构图，除非用户明确要求复刻某张图。每次都要从当前文章重新发明一个奇怪但成立的隐喻。
+Do not copy old cases. The examples only show line density, whitespace, color restraint, and Xiaohei participation. Do not reuse known compositions such as conveyor-belt breakpoints, Xiaohei pulling a decision lever, Xiaohei as a funnel, Xiaohei cutting a fish, Xiaohei pulling a handoff path, Xiaohei pulling three information layers, the three-Xiaohei bridge/door/megaphone scene, the phrase toolbox, or the common-pitfall sign. Re-invent a strange but coherent metaphor from the current article each time.
 
-### 4. 检查与迭代
+### 4. Check and Iterate
 
-生成后检查 `references/qa-checklist.md`。如果出现以下问题，优先重生成或局部编辑：
+After generation, check `references/qa-checklist.md`. If any of the following happen, regenerate or edit locally:
 
-- 小黑只是装饰
-- 画面太满
-- 太像流程图/PPT
-- Too much text or severe English spelling mistakes
-- 左上角出现“常见坑/流程图/系统架构图”等标题
-- 画风太可爱、幼稚、死板
-- 背景不是干净白底
+- Xiaohei is only decorative
+- the frame is too full
+- it looks too much like a flowchart or PPT
+- there are too many labels or too much text
+- a top-left title appears
+- the style feels too cute, childish, or stiff
+- the background is not clean white
 
-### 5. 保存交付
+### 5. Save the Deliverable
 
-如果用户在 workspace 内工作，把最终图复制到：
+If the user is working in the workspace, copy the final image to:
 
 ```text
 assets/<article-slug>-illustrations/
 ```
 
-按顺序命名：
+Use sequential names such as:
 
 ```text
 01-topic-name.png
 02-topic-name.png
 ```
 
-保留原始生成文件，不要覆盖已有资产，除非用户明确要求替换。
+Keep the original generated file and do not overwrite existing assets unless the user explicitly asks for replacement.
 
-## 输出口径
+## Output Format
 
-生成前的策略输出要短而准。生成后的交付要包含：
+Keep the pre-generation response short and precise. The post-generation handoff should include:
 
-- 生成了几张
-- 每张图的用途
-- 保存路径
-- 哪些图最稳，哪些图是可选
+- how many images were generated
+- what each image is for
+- where each file is saved
+- which images are the most reliable and which are optional
 
-不要长篇解释风格理论；让图自己说话。
+Do not write long theory about the style; let the images do the work.

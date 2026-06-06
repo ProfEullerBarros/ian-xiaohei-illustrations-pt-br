@@ -1,12 +1,12 @@
-# 风格 DNA
+# Style DNA
 
-## 一句话
+## One Line
 
 Pure white, minimal, hand-drawn, spacious, restrained, weird, product-sketch feeling, English handwritten feel, structurally clear but not instructional.
 
 Like an explainer sketch casually drawn on white paper by someone who has spent years making AI, product, design, and developer tools.
 
-## 必须
+## Must-Haves
 
 - 16:9 horizontal body illustration.
 - Pure white background: no beige, warm gray, paper texture, gradients, shadows, noise, or retro paper feel.
@@ -16,16 +16,16 @@ Like an explainer sketch casually drawn on white paper by someone who has spent 
 - One image should explain only one core action, structure, state, or metaphor.
 - Let the structure emerge naturally; do not write the structure type on the image.
 
-## 颜色
+## Color
 
 - Black: primary line art, characters, frames, structures, main text, and main objects.
 - Red: key annotations, problems, emotional points, critical reminders, and results.
 - Orange: main flow, paths, arrows, automation flow, and movement from A to B.
 - Blue: side notes, mental state, system state, second-layer explanation, and AI/assistant/automation cues.
 
-蓝色不是每张都必须用。颜色要克制，宁可少不要多。
+Blue is not required in every image. Keep color use restrained.
 
-## 绝对不要
+## Absolute No
 
 - No commercial illustration.
 - No PPT infographic.
@@ -41,7 +41,7 @@ Like an explainer sketch casually drawn on white paper by someone who has spent 
 - Do not explain every node.
 - Do not write top-left titles like "Workflow", "System Architecture", "Common Pitfalls", or "Route Map".
 
-## 审美方向
+## Aesthetic Direction
 
 It should feel weird, creative, interesting, clean, and a little unhinged.
 
