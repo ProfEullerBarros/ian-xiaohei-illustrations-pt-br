@@ -140,7 +140,7 @@ Run the repository validator before publishing or copying a changed skill:
 npm test
 ```
 
-The validator checks the installable skill bundle, required reference files, local Markdown links, English-default text, synced example assets, PNG dimensions, and the generation/save contract.
+The validator checks the installable skill bundle, required reference files, local Markdown links, English-default text, synced example assets, PNG dimensions, behavior eval fixtures, and the generation/save/QA contract.
 
 ### Versioning
 
@@ -240,6 +240,8 @@ The workflow is:
 │   │   ├── 02-sort-by-purpose.png
 │   │   └── ...
 │   └── prompts.md
+├── evals/
+│   └── behavior-cases.json
 └── ian-xiaohei-illustrations/
     ├── SKILL.md
     ├── VERSION

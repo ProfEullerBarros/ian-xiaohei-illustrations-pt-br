@@ -2,6 +2,21 @@
 
 All notable changes to this repository are tracked here.
 
+## Unreleased
+
+### Added
+
+- Add behavior eval fixtures for planning, generation, editing, saving, QA handoff, and trigger-boundary cases.
+- Add validator checks that bind behavior fixtures to the skill and reference source files.
+
+### Changed
+
+- Clarify that saved images go under the current workspace root, not the installed skill bundle.
+- Add mode-specific reference loading guidance.
+- Require a compact per-image QA manifest in final handoffs.
+- Define direct generation without an explicit count as 3 images.
+- Narrow implicit use boundaries for generic illustration, PPT, commercial brand art, children's cartoons, and non-Xiaohei image requests.
+
 ## 0.1.0 - 2026-06-06
 
 ### Added

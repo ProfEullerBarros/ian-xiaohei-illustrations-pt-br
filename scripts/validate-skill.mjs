@@ -96,7 +96,8 @@ function validateSkillShape() {
     "CHANGELOG.md",
     "package.json",
     "README.md",
-    "examples/prompts.md"
+    "examples/prompts.md",
+    "evals/behavior-cases.json"
   ];
 
   for (const file of requiredFiles) {
@@ -180,7 +181,8 @@ function validateInstructionContract() {
   }
 
   assertIncludes("README.md", "npm test");
-  assertIncludes("README.md", "generation/save contract");
+  assertIncludes("README.md", "behavior eval fixtures");
+  assertIncludes("README.md", "generation/save/QA contract");
 }
 
 function validateMarkdownLinks() {
@@ -318,10 +320,114 @@ function validateReferenceCoverage() {
   }
 }
 
+function validateBehaviorEvalFixtures() {
+  const evalFile = "evals/behavior-cases.json";
+  const behavior = readJson(evalFile);
+  const cases = behavior.cases;
+  const validOutcomes = new Set(["plan_only", "generate", "edit", "save", "out_of_scope"]);
+  const requiredModes = ["plan_only", "generate", "edit", "save"];
+  const seenIds = new Set();
+  const seenModes = new Set();
+  const seenGenerateCounts = new Set();
+  let hasOutOfScopeCase = false;
+
+  if (!Array.isArray(cases) || cases.length === 0) {
+    fail(`${evalFile} must define a non-empty cases array`);
+    return;
+  }
+
+  for (const testCase of cases) {
+    if (!testCase || typeof testCase !== "object") {
+      fail(`${evalFile} contains a non-object case`);
+      continue;
+    }
+
+    const label = testCase.id || "<missing id>";
+    if (!/^[a-z0-9-]+$/.test(testCase.id || "")) {
+      fail(`${evalFile} case ${label} must use a lowercase hyphenated id`);
+    }
+
+    if (seenIds.has(testCase.id)) {
+      fail(`${evalFile} contains duplicate case id: ${testCase.id}`);
+    }
+    seenIds.add(testCase.id);
+
+    if (typeof testCase.request !== "string" || testCase.request.trim().length < 20) {
+      fail(`${evalFile} case ${label} must include a realistic request`);
+    }
+
+    if (!validOutcomes.has(testCase.expected_mode)) {
+      fail(`${evalFile} case ${label} has invalid expected_mode: ${testCase.expected_mode}`);
+    } else if (testCase.expected_mode === "out_of_scope") {
+      hasOutOfScopeCase = true;
+    } else {
+      seenModes.add(testCase.expected_mode);
+    }
+
+    if (!Array.isArray(testCase.expected_references)) {
+      fail(`${evalFile} case ${label} must include expected_references`);
+    }
+
+    if (!Array.isArray(testCase.required_output_fields) || testCase.required_output_fields.length === 0) {
+      fail(`${evalFile} case ${label} must include required_output_fields`);
+    }
+
+    if (testCase.expected_mode === "generate") {
+      if (!Number.isInteger(testCase.expected_image_count) || testCase.expected_image_count < 1) {
+        fail(`${evalFile} generate case ${label} must include expected_image_count`);
+      } else {
+        seenGenerateCounts.add(testCase.expected_image_count);
+      }
+    }
+
+    if (testCase.expected_mode === "save" && testCase.expected_save_root !== "<workspace-root>/assets/<article-slug>-illustrations/") {
+      fail(`${evalFile} save case ${label} must assert the workspace-root save destination`);
+    }
+
+    if (!Array.isArray(testCase.source_must_include) || testCase.source_must_include.length === 0) {
+      fail(`${evalFile} case ${label} must include source_must_include assertions`);
+      continue;
+    }
+
+    for (const assertion of testCase.source_must_include) {
+      if (!assertion || typeof assertion.path !== "string" || typeof assertion.text !== "string") {
+        fail(`${evalFile} case ${label} has an invalid source_must_include assertion`);
+        continue;
+      }
+
+      if (!exists(assertion.path)) {
+        fail(`${evalFile} case ${label} points to missing source file: ${assertion.path}`);
+        continue;
+      }
+
+      assertIncludes(assertion.path, assertion.text, `${label}: ${assertion.text}`);
+    }
+  }
+
+  for (const mode of requiredModes) {
+    if (!seenModes.has(mode)) {
+      fail(`${evalFile} must include a behavior case for mode: ${mode}`);
+    }
+  }
+
+  if (!seenGenerateCounts.has(3)) {
+    fail(`${evalFile} must include a generate case for the default 3-image count`);
+  }
+
+  if (!seenGenerateCounts.has(4)) {
+    fail(`${evalFile} must include a generate case for an explicit requested count`);
+  }
+
+  if (!hasOutOfScopeCase) {
+    fail(`${evalFile} must include an out_of_scope trigger-boundary case`);
+  }
+}
+
 validateSkillShape();
 validateVersionTracking();
 validateInstructionContract();
 validateReferenceCoverage();
+validateBehaviorEvalFixtures();
 validateMarkdownLinks();
 validateEnglishDefaultText();
 validateExampleAssets();
