@@ -15,7 +15,7 @@ Default visual IP: Xiaohei, a black solid creature with white dot eyes, thin leg
 
 ## Reference Files
 
-Read only what you need:
+Read only the files required for the selected mode:
 
 - `references/style-dna.md`: style DNA, colors, text, and bans.
 - `references/xiaohei-ip.md`: Xiaohei's appearance, personality, action pool, and bans.
@@ -23,6 +23,14 @@ Read only what you need:
 - `references/prompt-template.md`: single-image prompt template.
 - `references/qa-checklist.md`: generation checks and iteration rules.
 - `assets/examples/`: low-frequency style calibration only. Do not copy these examples' compositions, objects, or labels.
+
+Mode loading matrix:
+
+- `plan_only`: read `references/composition-patterns.md`; read `references/style-dna.md` and `references/xiaohei-ip.md` only if the requested style or character behavior is unclear.
+- `generate`: read `references/style-dna.md`, `references/xiaohei-ip.md`, `references/composition-patterns.md`, `references/prompt-template.md`, and `references/qa-checklist.md` before the first image.
+- `edit`: read `references/prompt-template.md` and `references/qa-checklist.md`; read `references/xiaohei-ip.md` only for Xiaohei-involvement revisions.
+- `save`: use the save rules in this file; read `references/qa-checklist.md` only if the generated files still need visual QA.
+- `assets/examples/`: do not open by default. Open examples only when the user asks for style calibration, comparison, or a specific old case.
 
 ## Operating Modes
 
